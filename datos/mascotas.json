@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "nombre": "Roman",
+    "especie": "Perro",
+    "edad": "4 años",
+    "descripcion": "Perro muy jugueton y terco.",
+    "estado": "En adopción",
+    "imagen": ""
+  },
+  {
+    "id": "2",
+    "nombre": "Luna",
+    "especie": "Gato",
+    "edad": "2 años",
+    "descripcion": "Gata muy cariñosa.",
+    "estado": "En adopción",
+    "imagen": ""
+  },
+  {
+    "id": "3",
+    "nombre": "Francisco",
+    "especie": "Perro",
+    "edad": "5 años",
+    "descripcion": "Perro guardián.",
+    "estado": "Adoptada",
+    "imagen": ""
+  },
+  {
+    "id": "4",
+    "nombre": "Michi",
+    "especie": "Gato",
+    "edad": "2 año",
+    "descripcion": "Cachorro curioso y lleno de energía.",
+    "estado": "Reservada",
+    "imagen": ""
+  },
+  {
+    "id": "5",
+    "nombre": "Kiara",
+    "especie": "conejo",
+    "edad": "2 años",
+    "descripcion": "Muy amigable con los niños.",
+    "estado": "En adopción",
+    "imagen": ""
+  },
+  {
+    "id": "6",
+    "nombre": "Lucas",
+    "especie": "Loro",
+    "edad": "3 años",
+    "descripcion": "Ave muy alegre, le gusta imitar sonidos.",
+    "estado": "Reservada",
+    "imagen": ""
+  }
+]
