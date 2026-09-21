@@ -1,4 +1,4 @@
-const fs = require("node:fs/prmomises");
+const fs = require("node:fs/promises");
 
 async function leerJson(ruta) 
 
