@@ -11,20 +11,22 @@ async function main() {
   const mascotas = await leerJson(rutaMascotas);
   const app = express();
 
-  //vistas (view engine)
+  //vistas (view engine): indica que vistas utilizaran el motor ejs
   app.set("view engine", "ejs");
+
+  //indica donde se encuentra las vistas de la aplacacion
   app.set("views", path.join(__dirname, "..", "views"));
 
   //layouts plantillas
   app.use(expressLayouts);
-  app.set("layaout", "layouts/main");
+  app.set("layout", "layouts/main");
 
   // archivos estáticos:Permite que cualquier archivo
   // dentro de la carpeta public sea accesible públicamente
   // a través del navegador (por ejemplo, http://localhost:3000/lucas.png).
   app.use(express.static(path.join(__dirname, "..", "public")));
 
-  //procesamiento de datos de formularios (req.body)
+  //permite recibir los datos enviados por el formulario html (req.body)
   app.use(express.urlencoded({ extended: false }));
 
   //ruta para obtener mascotas
@@ -61,11 +63,47 @@ async function main() {
     });
   });
 
-app.post("/mascotas",(req,res)=>{
-    
+  app.post("/mascotas", (req, res) => {
+    const { nombre, especie, edad, descripcion, estado } = req.body;
 
-})
+    const nombreLimpio = String(nombre ?? "").trim();
+    const especieLimpia = String(especie ?? "").trim();
+    const edadNumerica = Number(edad);
+    const descripcionLimpia = String(descripcion ?? "").trim();
+    const estadoLimpio = String(estado ?? "").trim();
 
+    if (
+      !nombreLimpio ||
+      !especieLimpia ||
+      !Number.isFinite(edadNumerica) ||
+      !Number.isInteger(edadNumerica) ||
+      edadNumerica < 0 ||
+      edadNumerica > 30 || //limite de edad para el registro
+      !descripcionLimpia ||
+      !estadoLimpio
+    ) {
+      return res.status(404).render("mascotas/nuevo", {
+        titulo: "Nueva mascota",
+        error: "Completa los campos con datos validos",
+        valores: req.body,
+      });
+    }
+    const ultimoId = mascotas.reduce(
+      (mayorId, mascota) => Math.max(mayorId, mascota.id),
+      0,
+    );
+
+    mascotas.push({
+      id: ultimoId + 1,
+      nombre: nombreLimpio,
+      especie: especieLimpia,
+      edad: edadNumerica,
+      descripcion: descripcionLimpia,
+      estado: estadoLimpio,
+      imagen: "img/mascota.svg",
+    });
+    res.redirect("/mascotas");
+  });
 
   app.listen(PORT, () => {
     console.log(`App disponible en http://localhost:${PORT}`);
