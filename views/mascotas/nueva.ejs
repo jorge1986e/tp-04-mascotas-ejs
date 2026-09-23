@@ -1,0 +1,56 @@
+<section
+    class="max-w-[45rem] p-[clamp(1.5rem,5vw,4rem)] rounded-4xl bg-[#fffdf9] mx-auto bg-gray-300/40">
+    <p class="mb-2 text-[#a87608] text-xs font-extrabold tracking-[0.12em] uppercase ">Registro de nueva mascota</p>
+    <h1 class="mt-0 text-[clamp(2rem,6vw,3.75rem)] font-bold leading-[1.05] mb-4">
+        <%= titulo %>
+    </h1>
+
+    <% if (error) { %>
+        <p class="py-3 px-4 border-l-[0.3rem] border-[#b42318] bg-[#fff0ed] text-[#7a271a] font-bold" role="alert">
+            <%= error %>
+        </p>
+        <% } %>
+
+            <form action="/mascotas" method="post" class="grid gap-3">
+
+                <label for="nombre" class="font-bold">Nombre</label>
+                <input
+                    class=" focus:outline focus:outline-[3px] focus:outline-[#f4ca76] focus:outline-offset-[3px] w-full p-3 border border-[#a79c8e] rounded-lg bg-white text-inherit font-inherit"
+                    id="nombre" name="nombre" value="<%= valores.nombre ?? '' %>" required>
+
+                <label for="especie" class="font-bold">Especie</label>
+                <input
+                    class="focus:outline focus:outline-[3px] focus:outline-[#f4ca76] focus:outline-offset-[3px] w-full p-3 border border-[#a79c8e] rounded-lg bg-white text-inherit font-inherit"
+                    id="especie" name="especie" value="<%= valores.especie ?? '' %>" required>
+
+                <label for="edad" class="font-bold">Edad</label>
+                <input
+                    class="focus:outline focus:outline-[3px] focus:outline-[#f4ca76] focus:outline-offset-[3px] w-full p-3 border border-[#a79c8e] rounded-lg bg-white text-inherit font-inherit"
+                    id="number" id="edad" name="edad" min="0" value="<%= valores.edad ?? '' %>" required>
+
+                <label for="descripcion" class="font-bold">Descripcion</label>
+                <textarea
+                    class="focus:outline focus:outline-[3px] focus:outline-[#f4ca76] focus:outline-offset-[3px] w-full p-3 border border-[#a79c8e] rounded-lg bg-white text-inherit font-inherit resize-y"
+                    id="descripcion" name="descripcion" rows="4" required> <%= valores.descripcion ?? '' %> </textarea>
+
+                <label for="estado" class="font-bold">Estado</label>
+                <select
+                    class="focus:outline focus:outline-[3px] focus:outline-[#f4ca76] focus:outline-offset-[3px] w-full p-3 border border-[#a79c8e] rounded-lg bg-white text-inherit font-inherit"
+                    id="estado" name="estado" required>
+
+                    <option value="">Elegir un estado</option>
+                    <option value="En adopcion" <%=valores.estado==="En adopcion" ? "selected" : "" %>>En Adopción
+                    </option>
+                    <option value="Reservada" <%=valores.estado==="Reservada" ? "selected" : "" %>>Reservada</option>
+                    <option value="Adoptada" <%=valores.estado==="Adoptada" ? "selected" : "" %>>Adoptada</option>
+
+                </select>
+
+                <button
+                    class="inline-block justify-self-start mt-2 px-4 py-3 bg-[#eda200] text-black font-extrabold rounded-xl hover:bg-[#a87608] hover:text-white"
+                    type="submit">Agregar mascotita❤</button>
+
+            </form>
+
+
+</section>

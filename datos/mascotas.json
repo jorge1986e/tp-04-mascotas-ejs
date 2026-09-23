@@ -1,56 +1,56 @@
 [
   {
-    "id": "1",
-    "nombre": "Roman",
+    "id": 1,
+    "nombre": "Román",
     "especie": "Perro",
     "edad": "4 años",
-    "descripcion": "Perro muy jugueton y terco.",
+    "descripcion": "Jugueton y un poco terco, no te dejes engañar por su fachada de tipo duro porque es un bombon",
     "estado": "En adopción",
-    "imagen": ""
+    "imagen": "/img/roman.png"
   },
   {
-    "id": "2",
+    "id": 2,
     "nombre": "Luna",
     "especie": "Gato",
     "edad": "2 años",
-    "descripcion": "Gata muy cariñosa.",
+    "descripcion": "Súper curiosa, alegre y llena de energía. Le encanta cazar y explorar cada rincón.",
     "estado": "En adopción",
-    "imagen": ""
+    "imagen": "/img/luna.png"
   },
   {
-    "id": "3",
+    "id": 3,
     "nombre": "Francisco",
     "especie": "Perro",
     "edad": "6 años",
-    "descripcion": "Perro guardián.",
+    "descripcion": "Guardián, veloz y cariñoso. Le encantan recibir caricias en la panza.",
     "estado": "Adoptada",
-    "imagen": ""
+    "imagen": "/img/francisco.png"
   },
   {
-    "id": "4",
+    "id": 4,
     "nombre": "Michi",
     "especie": "Gato",
     "edad": "2 año",
-    "descripcion": "Cachorro curioso y lleno de energía.",
+    "descripcion": "Curioso, cariñoso y lleno de energía.",
     "estado": "Reservada",
-    "imagen": ""
+    "imagen": "/img/michi.png"
   },
   {
-    "id": "5",
+    "id": 5,
     "nombre": "Kiara",
     "especie": "conejo",
     "edad": "2 años",
-    "descripcion": "Muy amigable con los niños.",
+    "descripcion": "Alegría en miniatura, le encanta correr y dar saltitos de felicidad por toda la casa",
     "estado": "En adopción",
-    "imagen": ""
+    "imagen": "/img/kiara.png"
   },
   {
-    "id": "6",
+    "id": 6,
     "nombre": "Lucas",
     "especie": "Loro",
     "edad": "3 años",
     "descripcion": "Ave muy alegre, le gusta imitar sonidos.",
     "estado": "Reservada",
-    "imagen": ""
+    "imagen": "/img/lucas.png"
   }
 ]

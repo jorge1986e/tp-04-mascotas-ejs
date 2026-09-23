@@ -1,0 +1,27 @@
+<article>
+    <div class="bg-gray-300/40 p-6 rounded-b-xl">
+
+        <img class="rounded-2xl" src="<%= mascota.imagen %>" alt="foto de <%= mascota.nombre %>" width="450" height="450">
+        <p class="mb-1 text-[#7d740a] text-xs font-extrabold tracking-[0.12em] uppercase">
+            <%= mascota.especie %>
+        </p>
+
+        <h1 class="mt-0 text-[#7d740a] text-[clamp(2rem,6vw,3.75rem)] leading-[1.05] font-bold">
+            <%= mascota.nombre %>
+        </h1>
+
+        <p class="text-xl font-bold mb-5">Edad: <%= mascota.edad %>
+        </p>
+
+        <p class="mb-4">
+            <%= mascota.descripcion %>
+        </p>
+
+        <p class="font-bold my-5 uppercase">Mascota: <%= mascota.estado %>
+        </p>
+
+        <a class="px-4 py-2 bg-[#eda200] text-black font-bold rounded-xl hover:bg-[#a87608] hover:text-white"
+            href="/mascotas">Volver al catalogo</a>
+
+    </div>
+</article>

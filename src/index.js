@@ -34,7 +34,16 @@ async function main() {
     res.json(mascotas);
   });
   app.get("/", (req, res) => {
-    res.render("inicio", { titulo: "Mascoteros" });
+    res.render("inicio", {
+      titulo: "Mascoteros",
+    });
+  });
+
+  app.get("/mascotas", (req, res) => {
+    res.render("mascotas/lista", {
+      titulo: "Listado de Mascotas",
+      mascotas,
+    });
   });
 
   //formulario render nueva mascota
@@ -47,13 +56,13 @@ async function main() {
   });
 
   //render ruta de busqueda por id
-  app.get("mascotas/:id", (req, res) => {
+  app.get("/mascotas/:id", (req, res) => {
     const id = Number(req.params.id);
     const mascota = mascotas.find((elemento) => elemento.id === id);
     if (!mascota) {
       return res.status(404).render("no-encontrado", {
-        titulo: "producto no encontrado",
-        mensaje: "no existe una mascota con ese identificador",
+        titulo: "Mascota no encontrada",
+        mensaje: "No existe una mascota con ese identificador",
       });
     }
 
@@ -82,7 +91,7 @@ async function main() {
       !descripcionLimpia ||
       !estadoLimpio
     ) {
-      return res.status(404).render("mascotas/nuevo", {
+      return res.status(404).render("mascotas/nueva", {
         titulo: "Nueva mascota",
         error: "Completa los campos con datos validos",
         valores: req.body,
